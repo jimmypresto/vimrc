@@ -29,10 +29,10 @@ $ export CSCOPE_DB=/full/path/to/your/generated/cscope.out
 
 After you copy or symlink to your *~/.vimrc*, install the vim package manager *Vundle*.
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-First time in *vim*, install all packages and re-launch it.
+First time in *vim*, run this vim command for package installations, and re-launch *vim*.
 ```
 :PluginInstall
 ```
