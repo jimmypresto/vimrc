@@ -72,5 +72,22 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:vroom_use_detect_spec_helper = 1
 let g:vroom_use_bundle_exec = 1
 
+runtime macros/matchit.vim
+
+if has("cscope")
+  set csprg=/usr/local/bin/cscope
+  set csto=0
+  set cst
+  set nocsverb
+  " add any database in current directory
+  if filereadable("cscope.out")
+      cs add cscope.out
+  " else add database pointed to by environment
+  elseif $CSCOPE_DB != ""
+      cs add $CSCOPE_DB
+  endif
+  set csverb
+endif
+
 highlight Pmenu ctermbg=gray guibg=gray
 set completeopt=longest,menuone
