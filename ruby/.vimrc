@@ -5,23 +5,21 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'cscope_maps.vim'
-"Plugin 'https://github.com/vim-ruby/vim-ruby.git'
-"Plugin 'https://github.com/tpope/vim-rails.git'
-Plugin 'https://github.com/tpope/vim-fugitive.git'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
-Plugin 'https://github.com/skalnik/vim-vroom.git'
 Plugin 'https://github.com/tpope/vim-rails.git'
 Plugin 'https://github.com/tpope/vim-rbenv.git'
 Plugin 'https://github.com/tpope/vim-bundler.git'
 Plugin 'https://github.com/tpope/vim-repeat.git'
 Plugin 'https://github.com/tpope/vim-surround.git'
+Plugin 'https://github.com/skalnik/vim-vroom.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'https://github.com/szw/vim-tags.git'
+Plugin 'https://github.com/ivalkeen/vim-ctrlp-tjump.git'
+Plugin 'https://github.com/universal-ctags/ctags.git'
 Plugin 'https://github.com/airblade/vim-gitgutter.git'
+Plugin 'https://github.com/tpope/vim-fugitive.git'
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/Xuyuanp/nerdtree-git-plugin.git'
 Plugin 'https://github.com/morhetz/gruvbox.git'
 Plugin 'https://github.com/vim-syntastic/syntastic.git'
 call vundle#end()            " required
@@ -49,10 +47,13 @@ autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 set tags=tags
 set updatetime=100
-cs add $CSCOPE_DB
 
 "CtrlP
 silent! nmap <C-p> :CtrlP<CR>
+
+"vim-ctrlp-tjump
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
 
 "NERDTree
 silent! nmap <C-S-f> :NERDTreeToggle<CR>
@@ -74,6 +75,7 @@ let g:vroom_use_bundle_exec = 1
 
 runtime macros/matchit.vim
 
+"cscope
 if has("cscope")
   set csprg=/usr/local/bin/cscope
   set csto=0
@@ -88,6 +90,10 @@ if has("cscope")
   endif
   set csverb
 endif
+
+"ctags
+set tags=tags
+set path=.
 
 highlight Pmenu ctermbg=gray guibg=gray
 set completeopt=longest,menuone
