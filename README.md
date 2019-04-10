@@ -30,12 +30,39 @@ $ starscope -e cscope
 $ ctags --exclude=.git --exclude='*.log' -R * `bundle show --paths | grep --color=none '^/'`
 ```
 
+The *cscope* command requires the presense of cscope.files
+```
+$ find . -type f -name '*.rb' > cscope.files
+```
+
 After you copy or symlink to your *~/.vimrc*, install the vim package manager *Vundle*.
 ```
-$git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 First time in *vim*, run this vim command for package installations, and re-launch *vim*.
 ```
 :PluginInstall
+```
+
+# VIM everything
+
+Brew-install vim with **--enable-gui=yes**
+```
+$ brew edit vim
+# find option enable-gui and enable it
+$ brew reinstall vim
+```
+
+## Profile start time
+```
+$ vim --startuptime vim.log
+```
+
+## Profile command(s)
+```
+:profile start output.log
+:profile func *
+:profile file *
+:profile pause
 ```
