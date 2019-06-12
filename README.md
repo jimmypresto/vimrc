@@ -45,6 +45,16 @@ First time in *vim*, run this vim command for package installations, and re-laun
 :PluginInstall
 ```
 
+To search into gem source with *ctrl + ]*
+
+```
+https://chodounsky.net/2016/12/09/using-tags-to-browse-ruby-and-gem-source-with-vim/
+gem install gem-ctags
+gem ctags
+mkdir -p ~/.rbenv/plugins git clone git://github.com/tpope/rbenv-ctags.git \ ~/.rbenv/plugins/rbenv-ctags rbenv ctags
+:Rtags
+```
+
 # VIM everything
 
 Brew-install vim with **--enable-gui=yes**
