@@ -51,7 +51,9 @@ To search into gem source with *ctrl + ]*
 https://chodounsky.net/2016/12/09/using-tags-to-browse-ruby-and-gem-source-with-vim/
 gem install gem-ctags
 gem ctags
-mkdir -p ~/.rbenv/plugins git clone git://github.com/tpope/rbenv-ctags.git \ ~/.rbenv/plugins/rbenv-ctags rbenv ctags
+mkdir -p ~/.rbenv/plugins
+git clone git://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags 
+rbenv ctags
 :Rtags
 ```
 
