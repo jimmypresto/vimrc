@@ -8,7 +8,6 @@ $ brew install rbenv
 $ brew install cscope
 $ brew install fzf
 $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-
 ```
 
 In *~/.bash_profile*, have this this line at the end.
