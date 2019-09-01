@@ -1,5 +1,6 @@
 # if autocomplete didn't work, try 'irb -r irb/completion' and see the error message
 # if complains about libreadline.6.dynlib not found, symlink the existing one to it
+require 'bond'
 require 'irb/completion'
 https://github.com/jimmypresto/vimrc
 IRB.conf[:AUTO_INDENT] = true
