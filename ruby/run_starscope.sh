@@ -2,7 +2,8 @@
 
 starscope --verbose --summary
 #starscope -e ctags
-starscope -e cscope
+#starscope -e cscope
+starscope -e cscope --exclude docker --exclude coverage
 
 # Install universal-ctags first:
 #  $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
